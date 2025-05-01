@@ -76,7 +76,12 @@ const Home = () => {
                                     <input type='text' value={updatetask} onChange={e => setUpdatetask(e.target.value)} />
                                     :
                                     <div>
-                                       <p className={todo.done ? 'through' : 'normal'}>{todo.task}</p>
+                                       <div>
+                                           <p className={todo.done ? 'through' : 'normal'}>{todo.task}</p>
+                                            <small style={{color: 'gray', fontSize: '0.8rem'}}>
+                                              {moment(todo.createdAt).fromNow()}
+                                            </small>
+                                          </div>
                                          <small style={{color: 'gray', fontSize: '0.8rem'}}>
                                            {moment(todo.createdAt).fromNow()}
                                         </small>
