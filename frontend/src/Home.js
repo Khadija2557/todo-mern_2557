@@ -50,14 +50,14 @@ const Home = () => {
     };
 
     const Hdelete = (id) => {
-        if (window.confirm('Are you sure you want to delete this task?')) {
-       axios.delete(`http://localhost:5000/delete/${id}`)
+       if (window.confirm('Are you sure you want to delete this task?')) {
+      axios.delete(`http://localhost:5000/delete/${id}`)
       .then(result => {
         const updatedTodos = todos.filter(todo => todo._id !== id);
         setTodos(updatedTodos);
       })
       .catch(err => console.log(err));
-       }
+      }
     };
 
     return (
