@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import Create from './Create';
 import './App.css';
@@ -71,7 +72,12 @@ const Home = () => {
                                 {taskid === todo._id ?
                                     <input type='text' value={updatetask} onChange={e => setUpdatetask(e.target.value)} />
                                     :
-                                    <p className={todo.done ? 'through' : 'normal'}>{todo.task}</p>
+                                    <div>
+                                       <p className={todo.done ? 'through' : 'normal'}>{todo.task}</p>
+                                         <small style={{color: 'gray', fontSize: '0.8rem'}}>
+                                           {moment(todo.createdAt).fromNow()}
+                                        </small>
+                                  </div>
                                 }
                             </div>
                             <div>
