@@ -68,8 +68,10 @@ const Home = () => {
                     todos.map((todo) => (
                         <div className='task' key={todo._id}>
                             <div className='checkbox'>
-                                {todo.done ? <BsFillCheckCircleFill className='icon' /> :
-                                    <BsCircleFill className='icon' onClick={() => edit(todo._id)} />}
+                                {todo.done ? 
+                                    <BsFillCheckCircleFill className='icon' color="green" /> :
+                                    <BsCircleFill className='icon' onClick={() => edit(todo._id)} />
+                                  }
                                 {taskid === todo._id ?
                                     <input type='text' value={updatetask} onChange={e => setUpdatetask(e.target.value)} />
                                     :
