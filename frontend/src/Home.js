@@ -76,14 +76,18 @@ const Home = () => {
                             </div>
                             <div>
                                 <span>
-                                    <BsPencil className='icon' onClick={() => {
-                                        if (taskid === todo._id) {
-                                            Update(todo._id, updatetask);
-                                        } else {
-                                            setTaskid(todo._id);
-                                            setUpdatetask(todo.task);
-                                        }
-                                    }} />
+                                    <BsPencil
+                                              className='icon'
+                                              onClick={() => {
+                                              if (taskid === todo._id) {
+                                                Update(todo._id, updatetask);
+                                              } else {
+                                                setTaskid(todo._id);
+                                                setUpdatetask(todo.task);
+                                              }
+                                           }}
+                                          color={taskid === todo._id ? "green" : "blueviolet"}
+                                       />
                                     <BsFillTrashFill className='icon' onClick={() => Hdelete(todo._id)} />
                                 </span>
                             </div>
