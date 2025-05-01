@@ -85,9 +85,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <span>
-                                    <BsPencil
-                                              className='icon'
-                                              onClick={() => {
+                                    <BsPencil className='icon' color={taskid === todo._id ? "green" : "blueviolet"} onClick={() => {
                                               if (taskid === todo._id) {
                                                 Update(todo._id, updatetask);
                                               } else {
